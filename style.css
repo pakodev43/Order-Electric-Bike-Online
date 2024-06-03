@@ -1,0 +1,45 @@
+/* @media ( min-width: 800px ) {} */
+
+:root{
+    --primary: rgb(163, 237, 247);
+    --light: rgb(255, 255, 255);
+    --dark: rgb(0, 0, 0);
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    min-width: 100vw;
+}
+
+.bg{
+    display: none;
+}
+
+.header{
+    padding: 1rem 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+
+.main{
+    @media ( min-width: 800px ) {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+}
+
+
+.footer{
+    padding: 1rem 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
