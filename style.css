@@ -23,11 +23,13 @@
 
 body{
     min-width: 100vw;
-    padding-inline: 2rem;
+    padding-inline: 1rem;
+    padding-block-end: 1.5rem;
     overflow-x: hidden;
     font-family: var(--font-primary);
     
     @media ( min-width: 800px ) {
+        padding-inline: 2rem;
         overflow: hidden;
     }
 }
@@ -326,6 +328,11 @@ body{
     }
 
     position: relative;
+    width: calc( 100vw - 1rem );
+    height: 150vw;
+    top: -150vw;
+    left: 0;
+    overflow: hidden;
     
     .ellipse{
         aspect-ratio: 1/1;
@@ -343,6 +350,7 @@ body{
     }
 
     .bike_name{
+        max-width: 4ch;
         position: relative;
         top: 152px;
         left: 134px;
