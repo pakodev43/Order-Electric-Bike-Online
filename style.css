@@ -7,6 +7,7 @@
     --gray: rgb(66, 69, 74);
 
     --font-primary: "Inter", sans-serif;
+    --font-secondary: "Neumatic Gothic Black", "Inter", sans-serif;
 
     --font-size-normal: 1.148rem;
     --font-size-small: 1rem;
@@ -23,12 +24,58 @@
 body{
     min-width: 100vw;
     padding-inline: 2rem;
+    overflow-x: hidden;
     font-family: var(--font-primary);
+    
+    @media ( min-width: 800px ) {
+        overflow: hidden;
+    }
 }
 
 .bg{
     display: none;
+    
+    @media ( min-width: 800px ) {
+        display: unset;
+        position: relative;
+        
+        .ellipse{
+            aspect-ratio: 1/1;
+            width: 1516px;
+            position: absolute;
+            /* transform: translate(-50%, -50%); */
+            top: -552px;
+            left: 459px;
+            border-radius: 50%;
+            background-color: var(--primary);
+            background: linear-gradient(135deg, #D8E6EF, #4EF8FF);
+            z-index: -1;
+        }
+
+        .bike_name{
+            position: relative;
+            top: 700px;
+            left: 300px;
+            font-size: 17rem;
+            text-transform: uppercase;
+            color: var(--light);
+            font-family: var(--font-secondary);
+        }
+        
+        .sparkle-1{
+            position: relative;
+            top: 425px;
+            left: 30px;
+        }
+
+        .sparkle-2{
+            position: relative;
+            top: 820px;
+            left: 596px;
+        }
+    }
 }
+
 
 
 
@@ -64,7 +111,7 @@ body{
 .login_link{
     padding: .3rem 1rem;
     color: var(--light);
-    background: linear-gradient(#0063B2, #4EF8FF);
+    background: linear-gradient(135deg, #0063B2, #4EF8FF);
     border-radius: .7rem;
 }
 
@@ -200,7 +247,7 @@ body{
     letter-spacing: .2ch;
     text-decoration: none;
     text-transform: uppercase;
-    background: linear-gradient(#0063B2, #4EF8FF);
+    background: linear-gradient(135deg, #0063B2, #4EF8FF);
     border-radius: .5rem;
 
     @media ( min-width: 800px ) {
@@ -213,13 +260,18 @@ body{
 }
 
 .specs_div{
-    width: max-content;
+    width: 100%;
     margin-block: 2rem;
     margin-inline: auto;
     border: 1.5px solid var(--primary);
     border-radius: .5rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
     
     @media ( min-width: 800px ) {
+        /* display: unset; */
+        width: max-content;
         margin-block: unset;
         padding-inline: 2.5rem;
         border-radius: 1.5rem;
@@ -227,12 +279,12 @@ body{
 }
 
 .spec{
-    display: inline-block;
-    margin: .7rem 1rem;
+    margin: .7rem 0;
     font-size: var(--font-size-x-small);
     font-weight: 600;
     
     @media ( min-width: 800px ) {
+        display: inline-block;
         margin: 1.7rem 2rem;
         font-size: 1rem;
     }
@@ -264,4 +316,51 @@ body{
 .footer_vector{
     margin-inline: 1rem;
     transform: translateY(7px);
+}
+
+
+/* Footer bg */
+.bg_m{
+    @media ( min-width: 800px ) {
+        display: none;
+    }
+
+    position: relative;
+    
+    .ellipse{
+        aspect-ratio: 1/1;
+        width: 150vw;
+        position: absolute;
+        /* transform: translate(-50%, -50%); */
+        bottom: -552px;
+        bottom: 0;
+        left: 459px;
+        left: 0;
+        border-radius: 50%;
+        background-color: var(--primary);
+        background: linear-gradient(135deg, #D8E6EF, #4EF8FF);
+        z-index: -1;
+    }
+
+    .bike_name{
+        position: relative;
+        top: 152px;
+        left: 134px;
+        font-size: 9rem;
+        text-transform: uppercase;
+        color: var(--light);
+        font-family: var(--font-secondary);
+    }
+    
+    .sparkle-1{
+        position: relative;
+        top: 425px;
+        left: 30px;
+    }
+
+    .sparkle-2{
+        position: relative;
+        top: 820px;
+        left: 596px;
+    }
 }
