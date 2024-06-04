@@ -9,7 +9,9 @@
     --font-primary: "Inter", sans-serif;
 
     --font-size-normal: 1.148rem;
-    --font-size-small: .8rem;
+    --font-size-small: 1rem;
+    --font-size-x-small: .8rem;
+    --font-size-xx-small: .7rem;
 }
 
 *{
@@ -32,11 +34,15 @@ body{
 
 /* HEADER */
 .header{
-    padding: 2rem 2rem;
+    padding-block: 2rem;
     display: flex;
     align-items: center;
-    justify-content: flex-start;
-    gap: 10rem;
+    justify-content: space-between;
+
+    @media ( min-width: 800px ) {
+        justify-content: flex-start;
+        gap: 10rem;
+    }
 }
 
 .nav_list{
@@ -63,6 +69,71 @@ body{
 }
 
 
+/* Nav Toggling */
+.nav_toggle_btn{
+    background-color: transparent;
+    outline: none;
+    border: none;
+    cursor: pointer;
+
+    @media ( min-width: 800px ) {
+        display: none;
+    }
+}
+
+.nav_toggle_icon{
+    width: 1.7rem;
+}
+
+.nav_toggle_icon path{
+    fill: var(--dark);
+}
+
+
+/* Nav Toggling Logic */
+.nav{
+    display: none;
+
+    @media ( min-width: 800px ) {
+        display: unset;
+    }
+}
+
+.active_nav{
+    display: grid;
+    place-items: center;
+    position: absolute;
+    top: 0;
+    right: 0;
+    height: 100vh;
+    width: 70vw;
+    color: var(--dark);
+    background-color: var(--light);
+
+    .nav_list{
+        flex-direction: column;
+        gap: 2rem;
+    }
+}
+
+.close_nav{
+    display: none;
+}
+
+.active_nav_toggle{
+    z-index: 1;
+
+    .open_nav{
+        display: none;
+    }
+
+    .close_nav{
+        display: unset;
+    }
+}
+
+
+
 
 /* MAIN */
 .main{
@@ -74,37 +145,56 @@ body{
 }
 
 .heading{
-    font-size: 7.178rem;
+    font-size: 4.8rem;
     font-weight: 600;
     text-transform: uppercase;
     letter-spacing: -6px;
     line-height: 1;
+    
+    @media ( min-width: 800px ) {
+        font-size: 7.178rem;
+    }
 }
 
 .heading_prefix{
-    font-size: 1.551rem;
+    font-size: 1rem;
     font-weight: 500;
     text-transform: uppercase;
     letter-spacing: 1.1ch;
     margin-inline-start: .5ch;
+    
+    @media ( min-width: 800px ) {
+        font-size: 1.551rem;
+    }
 }
 
 .description{
-    margin-block: 3rem;
+    margin-block: 2rem;
     margin-inline-start: .5ch;
     max-width: 20ch;
-    font-size: var(--font-size-normal);
+    font-size: var(--font-size-small);
     font-weight: 500;
     line-height: 1.6;
     color: var(--gray);
+    
+    @media ( min-width: 800px ) {
+        margin-block: 3rem;
+        font-size: var(--font-size-normal);
+    }
 }
 
 .main_call_to_action_div{
     margin: 5rem 0 0 1rem;
+    margin: 0rem 0 5rem 1rem;
+    
+    @media ( min-width: 800px ) {
+        margin: 5rem 0 7rem 1rem;
+    }
 }
 
 .main_call_to_action{
     padding: .5rem 1rem;
+    font-size: var(--font-size-xx-small);
     color: var(--light);
     font-weight: 700;
     letter-spacing: .2ch;
@@ -112,42 +202,63 @@ body{
     text-transform: uppercase;
     background: linear-gradient(#0063B2, #4EF8FF);
     border-radius: .5rem;
+
+    @media ( min-width: 800px ) {
+        font-size: 1rem;
+    }
 }
 
 .hero_img{
-    max-width: 90vw;
+    max-width: 100%;
 }
 
 .specs_div{
     width: max-content;
+    margin-block: 2rem;
     margin-inline: auto;
-    padding-inline: 2.5rem;
     border: 1.5px solid var(--primary);
-    border-radius: 1.5rem;
+    border-radius: .5rem;
+    
+    @media ( min-width: 800px ) {
+        margin-block: unset;
+        padding-inline: 2.5rem;
+        border-radius: 1.5rem;
+    }
 }
 
 .spec{
     display: inline-block;
-    margin: 1.7rem 2rem;
+    margin: .7rem 1rem;
+    font-size: var(--font-size-x-small);
     font-weight: 600;
+    
+    @media ( min-width: 800px ) {
+        margin: 1.7rem 2rem;
+        font-size: 1rem;
+    }
 }
 
 .spec_name{
-    font-size: var(--font-size-small);
+    font-size: var(--font-size-xx-small);
+    
+    @media ( min-width: 800px ) {
+        font-size: var(--font-size-x-small);
+    }
 }
 
 
 
 /* FOOTER */
 .footer{
-    padding: 1rem 2rem;
+    /* margin-block: 1.5rem; */
+    padding-block: 1rem;
     display: flex;
     align-items: center;
     justify-content: space-between;
 }
 
 .footer p{
-    font-size: 1.125rem;
+    font-size: 1rem;
 }
 
 .footer_vector{
